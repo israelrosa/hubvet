@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import petGroupsRouter from './petGroups.routes';
+import usersRouter from './users.routes';
 
 const router = Router();
 
@@ -12,5 +13,6 @@ router.get('/', (req, res) => {
 });
 
 router.use('/groups', petGroupsRouter);
+router.use('/users', usersRouter);
 
 export default router;

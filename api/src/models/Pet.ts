@@ -8,6 +8,7 @@ import {
   JoinColumn,
 } from 'typeorm';
 import PetGroup from './PetGroup';
+import User from './User';
 
 @Entity('pet')
 export default class Pet {
