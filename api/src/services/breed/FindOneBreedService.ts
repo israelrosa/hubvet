@@ -8,7 +8,7 @@ export default class FindOneBreedService {
     this.entityManager = getManager();
   }
 
-  async exec(breed_id: string): Promise<Breed> {
+  async exec(breed_id: string): Promise<Breed | undefined> {
     const breed = await this.entityManager.findOne(Breed, breed_id);
 
     return breed;

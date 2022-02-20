@@ -8,7 +8,7 @@ export default class FindOneCoatTypeService {
     this.entityManager = getManager();
   }
 
-  async exec(coat_type_id: string): Promise<CoatType> {
+  async exec(coat_type_id: string): Promise<CoatType | undefined> {
     const coatType = await this.entityManager.findOne(CoatType, coat_type_id);
 
     return coatType;
