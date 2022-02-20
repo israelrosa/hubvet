@@ -1,4 +1,9 @@
 export default {
+  PET_ALREADY_EXIST: {
+    id: 'pet_already_exist',
+    message: 'The pet already exist',
+    statusCode: 422,
+  },
   PET_GROUP_ALREADY_EXIST: {
     id: 'pet_group_already_exist',
     message: 'The pet group already exist',
@@ -9,6 +14,11 @@ export default {
     message: 'Token not found',
     statusCode: 401,
   },
+  INVALID_PET_AGE: {
+    id: 'invalid_pet_age',
+    message: 'The initial age must be less than final age',
+    statusCode: 401,
+  },
   INVALID_TOKEN: {
     id: 'invalid_token',
     message: 'Invalid token',
@@ -17,6 +27,11 @@ export default {
   INVALID_PASSWORD: {
     id: 'invalid_password',
     message: 'Invalid password',
+    statusCode: 422,
+  },
+  INVALID_PET_GROUP: {
+    id: 'invalid_specie',
+    message: 'Invalid pet group',
     statusCode: 422,
   },
   INVALID_SPECIE: {
@@ -36,11 +51,6 @@ export default {
   },
   INVALID_COAT_TYPE: {
     id: 'invalid_coat_type',
-    message: 'Invalid password',
-    statusCode: 422,
-  },
-  INVALID_PASSWORD: {
-    id: 'invalid_password',
     message: 'Invalid password',
     statusCode: 422,
   },

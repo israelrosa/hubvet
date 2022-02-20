@@ -19,10 +19,10 @@ export default class Pet {
   name: string;
 
   @Column()
-  intial_age: string;
+  initial_age: number;
 
   @Column()
-  final_age: string;
+  final_age: number;
 
   @Column()
   pet_group_id: string;

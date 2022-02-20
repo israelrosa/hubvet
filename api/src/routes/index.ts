@@ -6,6 +6,7 @@ import breedsRouter from './breeds.routes';
 import speciesRouter from './species.routes';
 import coatTypesRouter from './coatTypes.routes';
 import coatSizesRouter from './coatSizes.routes';
+import petRouter from './pet.routes';
 
 const router = Router();
 const userController = new UserController();
@@ -19,6 +20,7 @@ router.get('/', (req, res) => {
 });
 router.post('/token/', userController.authenticate);
 router.use('/groups', petGroupsRouter);
+router.use('/pets', petRouter);
 router.use('/users', usersRouter);
 router.use('/breeds', breedsRouter);
 router.use('/species', speciesRouter);
