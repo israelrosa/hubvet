@@ -28,10 +28,6 @@ export default function ensureAuthentication(
     const decoded = verify(token, authConfig.secret);
     const { sub } = decoded as ITokenPayload;
 
-    if (type && userType !== type) {
-      throw new Error();
-    }
-
     request.user = {
       id: sub,
     };
