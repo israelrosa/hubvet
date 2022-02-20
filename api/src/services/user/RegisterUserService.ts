@@ -1,6 +1,7 @@
 import User from 'models/User';
 import { getManager, EntityManager } from 'typeorm';
 import log from 'utils';
+import bcrypt from 'bcrypt';
 import ErrorHandler from 'utils/ErrorHandler';
 import Errors from 'utils/Errors';
 
@@ -18,16 +19,29 @@ export default class RegisterUserService {
     this.entityManager = getManager();
   }
 
-  async exec(data: RegisterUserData): Promise<User> {
+  async exec({
+    email,
+    firstName,
+    lastName,
+    password,
+  }: RegisterUserData): Promise<User> {
     const isEmailInUse = await this.entityManager.findOne(User, {
-      where: { email: data.email },
+      where: { email },
     });
 
     if (isEmailInUse) {
       throw new ErrorHandler(Errors.USER_EMAIL_IN_USE);
     }
 
-    const user = await this.entityManager.create(User, data);
+    const hash = await bcrypt.hash(password, 10);
+
+    const user = await this.entityManager.create(User, {
+      email,
+      firstName,
+      lastName,
+      password: hash,
+    });
+
     const result = await this.entityManager.save(user);
 
     log.info(`User ${result.id} created with success!`);
