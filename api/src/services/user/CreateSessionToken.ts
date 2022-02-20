@@ -11,9 +11,9 @@ export default function CreateSessionToken(
   });
 
   const result = {
-    accessToken: token,
-    tokenType: 'Bearer',
-    expiresIn: expiresTime,
+    access_token: token,
+    token_type: 'Bearer',
+    expires_in: expiresTime,
   };
 
   return result;
