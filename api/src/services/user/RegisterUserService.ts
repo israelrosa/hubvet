@@ -3,7 +3,7 @@ import { getManager, EntityManager } from 'typeorm';
 import log from 'utils';
 import bcrypt from 'bcrypt';
 import ErrorHandler from 'utils/ErrorHandler';
-import Errors from 'utils/Errors';
+import ERROR from 'utils/Errors';
 
 interface RegisterUserData {
   firstName: string;
@@ -30,7 +30,7 @@ export default class RegisterUserService {
     });
 
     if (isEmailInUse) {
-      throw new ErrorHandler(Errors.USER_EMAIL_IN_USE);
+      throw new ErrorHandler(ERROR.USER_EMAIL_IN_USE);
     }
 
     const hash = await bcrypt.hash(password, 10);

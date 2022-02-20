@@ -1,7 +1,18 @@
 import { Request, Response } from 'express';
+import AuthenticateUserService from 'services/user/AuthenticateUserService';
 import RegisterUserService from 'services/user/RegisterUserService';
 
 export default class UserController {
+  async authenticate(request: Request, response: Response) {
+    const { email, password } = request.body;
+
+    const authenticateUserService = new AuthenticateUserService();
+
+    const auth = await authenticateUserService.exec({ email, password });
+
+    return response.status(200).json(auth);
+  }
+
   async register(request: Request, response: Response) {
     const { firstName, lastName, email, password } = request.body;
 
@@ -16,6 +27,6 @@ export default class UserController {
 
     delete user.password;
 
-    response.status(200).json(user);
+    return response.status(200).json(user);
   }
 }
