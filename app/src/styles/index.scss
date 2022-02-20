@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+$body-font-family: "Poppins" !important;
+$heading-font-family: 'Poppins';
+$font-family:'Poppins';
+
+.v-application {
+  [class*='text-'] {
+    font-family: $font-family, sans-serif !important;
+  }
+  font-family: $font-family, sans-serif !important;
+}
+
+html {
+  overflow-y: initial;    
+}
+body {
+  font-family: $body-font-family;
+  margin: 0;
+  padding: 0;
+}
