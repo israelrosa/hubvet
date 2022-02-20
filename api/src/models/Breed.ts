@@ -4,7 +4,9 @@ import {
   Column,
   ManyToOne,
   JoinColumn,
+  OneToMany,
 } from 'typeorm';
+import PetGroup from './PetGroup';
 import Specie from './Specie';
 
 @Entity('breed')
@@ -21,4 +23,7 @@ export default class Breed {
   @ManyToOne(() => Specie, sp => sp.breeds)
   @JoinColumn({ name: 'specie_id' })
   specie: Specie;
+
+  @OneToMany(() => PetGroup, pg => pg.breed)
+  petGroups: PetGroup[];
 }

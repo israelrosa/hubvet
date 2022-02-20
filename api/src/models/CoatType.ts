@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import PetGroup from './PetGroup';
 
 @Entity('coat_type')
 export default class CoatType {
@@ -7,4 +8,7 @@ export default class CoatType {
 
   @Column({ unique: true })
   name: string;
+
+  @OneToMany(() => PetGroup, pg => pg.coat_type)
+  petGroups: PetGroup[];
 }
