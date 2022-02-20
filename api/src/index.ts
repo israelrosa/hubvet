@@ -23,6 +23,5 @@ server.use('/api/v1', router);
 server.use(errorMiddleware);
 
 server.listen(3080, () => {
-  // eslint-disable-next-line no-console
   log.info('Server listening on port 3080');
 });
