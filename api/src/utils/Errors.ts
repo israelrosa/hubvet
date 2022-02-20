@@ -1,4 +1,34 @@
 export default {
+  PET_GROUP_ALREADY_EXIST: {
+    id: 'pet_group_already_exist',
+    message: 'The pet group already exist',
+    statusCode: 422,
+  },
+  INVALID_PASSWORD: {
+    id: 'invalid_password',
+    message: 'Invalid password',
+    statusCode: 422,
+  },
+  INVALID_SPECIE: {
+    id: 'invalid_specie',
+    message: 'Invalid specie',
+    statusCode: 422,
+  },
+  INVALID_BREED: {
+    id: 'invalid_breed',
+    message: 'Invalid breed',
+    statusCode: 422,
+  },
+  INVALID_COAT_SIZE: {
+    id: 'invalid_coat_size',
+    message: 'Invalid coat size',
+    statusCode: 422,
+  },
+  INVALID_COAT_TYPE: {
+    id: 'invalid_coat_type',
+    message: 'Invalid password',
+    statusCode: 422,
+  },
   INVALID_PASSWORD: {
     id: 'invalid_password',
     message: 'Invalid password',
