@@ -6,8 +6,8 @@ import ErrorHandler from 'utils/ErrorHandler';
 import ERROR from 'utils/Errors';
 
 interface RegisterUserData {
-  firstName: string;
-  lastName: string;
+  first_name: string;
+  last_name: string;
   email: string;
   password: string;
 }
@@ -20,9 +20,9 @@ export default class RegisterUserService {
   }
 
   async exec({
+    first_name,
+    last_name,
     email,
-    firstName,
-    lastName,
     password,
   }: RegisterUserData): Promise<User> {
     const isEmailInUse = await this.entityManager.findOne(User, {
@@ -37,8 +37,8 @@ export default class RegisterUserService {
 
     const user = await this.entityManager.create(User, {
       email,
-      firstName,
-      lastName,
+      first_name,
+      last_name,
       password: hash,
     });
 

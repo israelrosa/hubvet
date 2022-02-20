@@ -31,10 +31,10 @@ export default class Pet {
   user_id: string;
 
   @CreateDateColumn()
-  createdAt: Date;
+  created_at: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updated_at: Date;
 
   @ManyToOne(() => PetGroup, pg => pg.pets)
   @JoinColumn({ name: 'pet_group_id' })

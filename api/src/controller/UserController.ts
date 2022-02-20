@@ -14,13 +14,13 @@ export default class UserController {
   }
 
   async register(request: Request, response: Response) {
-    const { firstName, lastName, email, password } = request.body;
+    const { first_name, last_name, email, password } = request.body;
 
     const registerUserService = new RegisterUserService();
 
     const user = await registerUserService.exec({
-      firstName,
-      lastName,
+      first_name,
+      last_name,
       email,
       password,
     });

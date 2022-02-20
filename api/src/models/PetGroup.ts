@@ -36,10 +36,10 @@ export default class PetGroup {
   coat_type_id: string;
 
   @CreateDateColumn()
-  createdAt: Date;
+  created_at: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updated_at: Date;
 
   @OneToMany(() => Pet, pet => pet.pet_group)
   pets: Pet[];
