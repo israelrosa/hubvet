@@ -7,5 +7,6 @@ const petGroupController = new PetGroupController();
 
 petGroupsRouter.use(ensureAuthentication);
 petGroupsRouter.post('/', petGroupController.create);
+petGroupsRouter.delete('/:id', petGroupController.delete);
 
 export default petGroupsRouter;

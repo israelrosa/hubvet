@@ -35,7 +35,7 @@ export default {
     statusCode: 422,
   },
   INVALID_PET_GROUP: {
-    id: 'invalid_specie',
+    id: 'invalid_pet_group',
     message: 'Invalid pet group',
     statusCode: 422,
   },

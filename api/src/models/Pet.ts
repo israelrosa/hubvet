@@ -36,7 +36,7 @@ export default class Pet {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @ManyToOne(() => PetGroup, pg => pg.pets)
+  @ManyToOne(() => PetGroup, pg => pg.pets, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'pet_group_id' })
   pet_group: PetGroup;
 
