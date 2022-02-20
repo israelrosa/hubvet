@@ -29,6 +29,11 @@ export default {
     message: 'Invalid password',
     statusCode: 422,
   },
+  INVALID_PET: {
+    id: 'invalid_pet',
+    message: 'Invalid pet',
+    statusCode: 422,
+  },
   INVALID_PET_GROUP: {
     id: 'invalid_specie',
     message: 'Invalid pet group',
@@ -63,5 +68,10 @@ export default {
     id: 'invalid_user',
     message: 'User not found',
     statusCode: 422,
+  },
+  USER_DOES_NOT_HAVE_PERMISSION: {
+    id: 'user_does_not_have_permission',
+    message: 'User does not have permission',
+    statusCode: 401,
   },
 };

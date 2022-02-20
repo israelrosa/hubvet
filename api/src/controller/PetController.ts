@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import CreatePetService from 'services/pet/CreatePetService';
+import DeletePetService from 'services/pet/DeletePetService';
 
 export default class PetController {
   async create(request: Request, response: Response) {
@@ -17,5 +18,16 @@ export default class PetController {
     });
 
     return response.status(200).json(pet);
+  }
+
+  async delete(request: Request, response: Response) {
+    const { id: user_id } = request.user;
+    const { id: pet_id } = request.params;
+
+    const deletePetService = new DeletePetService();
+
+    await deletePetService.exec({ pet_id, user_id });
+
+    return response.status(200).json();
   }
 }
