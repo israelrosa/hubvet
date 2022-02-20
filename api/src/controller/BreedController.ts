@@ -18,7 +18,7 @@ export default class BreedController {
 
     const findAllBreedsService = new FindAllBreedsService();
 
-    const breeds = await findAllBreedsService.exec(specie_id);
+    const breeds = await findAllBreedsService.exec(String(specie_id));
 
     return response.status(200).json(breeds);
   }
