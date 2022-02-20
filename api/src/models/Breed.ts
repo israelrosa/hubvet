@@ -25,5 +25,5 @@ export default class Breed {
   specie: Specie;
 
   @OneToMany(() => PetGroup, pg => pg.breed)
-  petGroups: PetGroup[];
+  pet_groups: PetGroup[];
 }

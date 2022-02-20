@@ -40,19 +40,19 @@ export default class PetGroup {
   @OneToMany(() => Pet, pet => pet.pet_group)
   pets: Pet[];
 
-  @ManyToOne(() => User, user => user.pet_group)
+  @ManyToOne(() => User, user => user.pet_groups)
   @JoinColumn({ name: 'user_id' })
   user: User;
 
-  @ManyToOne(() => Breed, breed => breed.pet_group)
+  @ManyToOne(() => Breed, breed => breed.pet_groups)
   @JoinColumn({ name: 'breed_id' })
   breed: Breed;
 
-  @ManyToOne(() => CoatSize, cs => cs.pet_group)
+  @ManyToOne(() => CoatSize, cs => cs.pet_groups)
   @JoinColumn({ name: 'coat_size_id' })
   coat_size: CoatSize;
 
-  @ManyToOne(() => CoatType, ct => ct.pet_group)
+  @ManyToOne(() => CoatType, ct => ct.pet_groups)
   @JoinColumn({ name: 'coat_type_id' })
   coat_type: CoatType;
 }

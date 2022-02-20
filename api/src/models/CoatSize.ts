@@ -10,5 +10,5 @@ export default class CoatSize {
   name: string;
 
   @OneToMany(() => PetGroup, pg => pg.coat_size)
-  petGroups: PetGroup[];
+  pet_groups: PetGroup[];
 }

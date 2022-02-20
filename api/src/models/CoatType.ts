@@ -10,5 +10,5 @@ export default class CoatType {
   name: string;
 
   @OneToMany(() => PetGroup, pg => pg.coat_type)
-  petGroups: PetGroup[];
+  pet_groups: PetGroup[];
 }
