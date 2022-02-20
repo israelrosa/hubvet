@@ -6,7 +6,13 @@ import log from 'utils';
 import router from 'routes';
 import { errorMiddleware } from 'utils/ErrorHandler';
 
-createConnection();
+createConnection().then(connection => {
+  connection.runMigrations({ transaction: 'all' }).then(migrations => {
+    migrations.forEach(migration => {
+      log.info('Migration %s was runned', migration.name);
+    });
+  });
+});
 
 const server = express();
 

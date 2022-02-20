@@ -1,4 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  JoinColumn,
+} from 'typeorm';
+import Specie from './Specie';
 
 @Entity('breed')
 export default class Breed {
@@ -7,4 +14,11 @@ export default class Breed {
 
   @Column({ unique: true })
   name: string;
+
+  @Column()
+  specie_id: string;
+
+  @ManyToOne(() => Specie, sp => sp.breeds)
+  @JoinColumn({ name: 'specie_id' })
+  specie: Specie;
 }

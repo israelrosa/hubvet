@@ -12,8 +12,10 @@ module.exports = {
   entities: [
     './src/models/*.ts',
   ],
-  migrations: ['./src/database/migrations/*.ts'],
+  migrations: [
+    './src/migrations/*.ts'
+  ],
   cli: {
-    migrationsDir: './src/database/migrations',
+    migrationsDir: './src/migrations',
   },
 };
