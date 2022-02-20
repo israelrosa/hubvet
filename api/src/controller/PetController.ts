@@ -8,7 +8,7 @@ export default class PetController {
 
     const createPetService = new CreatePetService();
 
-    const pet = createPetService.exec({
+    const pet = await createPetService.exec({
       final_age,
       initial_age,
       name,

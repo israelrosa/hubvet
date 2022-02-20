@@ -1,4 +1,5 @@
 import Pet from 'models/Pet';
+import PetGroup from 'models/PetGroup';
 import { getManager, EntityManager } from 'typeorm';
 import log from 'utils';
 import ErrorHandler from 'utils/ErrorHandler';
@@ -27,7 +28,7 @@ export default class CreatePetService {
     user_id,
   }: PetData): Promise<Pet> {
     const petGroupBelongsToUser = await this.entityManager.findOne(
-      Pet,
+      PetGroup,
       pet_group_id,
     );
 
