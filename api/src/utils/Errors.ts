@@ -4,6 +4,16 @@ export default {
     message: 'The pet group already exist',
     statusCode: 422,
   },
+  TOKEN_NOT_FOUND: {
+    id: 'token_not_found',
+    message: 'Token not found',
+    statusCode: 401,
+  },
+  INVALID_TOKEN: {
+    id: 'invalid_token',
+    message: 'Invalid token',
+    statusCode: 401,
+  },
   INVALID_PASSWORD: {
     id: 'invalid_password',
     message: 'Invalid password',
