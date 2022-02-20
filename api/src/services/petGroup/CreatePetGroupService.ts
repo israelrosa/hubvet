@@ -9,7 +9,6 @@ import CoatType from 'models/CoatType';
 
 interface PetGroupData {
   user_id: string;
-  specie_id: string;
   breed_id: string;
   coat_size_id: string;
   coat_type_id: string;
@@ -26,11 +25,10 @@ export default class CreatePetGroupService {
     breed_id,
     coat_size_id,
     coat_type_id,
-    specie_id,
     user_id,
   }: PetGroupData): Promise<PetGroup> {
     const isPetGroupAlreadyExist = await this.entityManager.findOne(PetGroup, {
-      where: { breed_id, coat_size_id, coat_type_id, specie_id, user_id },
+      where: { breed_id, coat_size_id, coat_type_id, user_id },
     });
 
     if (isPetGroupAlreadyExist) {
@@ -58,18 +56,10 @@ export default class CreatePetGroupService {
       throw new ErrorHandler(ERROR.INVALID_COAT_TYPE);
     }
 
-    const isSpecieExist = await this.entityManager.findOne(Specie, {
-      where: { id: specie_id },
-    });
-    if (!isSpecieExist) {
-      throw new ErrorHandler(ERROR.INVALID_SPECIE);
-    }
-
     const petGroup = await this.entityManager.create(PetGroup, {
       breed_id,
       coat_size_id,
       coat_type_id,
-      specie_id,
       user_id,
     });
 

@@ -3,8 +3,8 @@ import CreatePetGroupService from 'services/petGroup/CreatePetGroupService';
 
 export default class PetGroupController {
   async create(request: Request, response: Response) {
-    const { user_id, specie_id, breed_id, coat_size_id, coat_type_id } =
-      request.body;
+    const { id } = request.user;
+    const { breed_id, coat_size_id, coat_type_id } = request.body;
 
     const createPetGroupService = new CreatePetGroupService();
 
@@ -12,8 +12,7 @@ export default class PetGroupController {
       breed_id,
       coat_size_id,
       coat_type_id,
-      specie_id,
-      user_id,
+      user_id: id,
     });
 
     return response.status(200).json(petGroup);
