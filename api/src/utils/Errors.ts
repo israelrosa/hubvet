@@ -12,7 +12,12 @@ export default {
   TOKEN_NOT_FOUND: {
     id: 'token_not_found',
     message: 'Token not found',
-    statusCode: 401,
+    status_code: 401,
+  },
+  INVALID_FILE_EXTENSION: {
+    id: 'invalid_file_extension',
+    message: 'Invalid file extension',
+    status_code: 422,
   },
   INVALID_PET_AGE: {
     id: 'invalid_pet_age',

@@ -7,6 +7,7 @@ import speciesRouter from './species.routes';
 import coatTypesRouter from './coatTypes.routes';
 import coatSizesRouter from './coatSizes.routes';
 import petRouter from './pet.routes';
+import parsersRouter from './parsers.routes';
 
 const router = Router();
 const userController = new UserController();
@@ -26,5 +27,6 @@ router.use('/breeds', breedsRouter);
 router.use('/species', speciesRouter);
 router.use('/coats/types', coatTypesRouter);
 router.use('/coats/sizes', coatSizesRouter);
+router.use('/parsers', parsersRouter);
 
 export default router;
