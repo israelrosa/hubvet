@@ -1,13 +1,6 @@
 FROM node:alpine
 
-# Adding a non-root user
-ARG USERNAME=hubvet
-ARG USER_UID=1001
-ARG USER_GID=$USER_UID
-
-# Create the user
-RUN addgroup -g $USER_GID -S $USERNAME && \
-adduser -u $USER_UID -S $USERNAME -G $USERNAME
+ARG USERNAME=node
 
 WORKDIR /home/${USERNAME}/api
 
