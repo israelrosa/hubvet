@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import CreatePetService from 'services/pet/CreatePetService';
 import DeletePetService from 'services/pet/DeletePetService';
+import FindOnePetService from 'services/pet/FindOnePetService';
 import UpdatePetService from 'services/pet/UpdatePetService';
 
 export default class PetController {
@@ -48,5 +49,16 @@ export default class PetController {
     });
 
     return response.status(200).json(newPet);
+  }
+
+  async findOne(request: Request, response: Response) {
+    const { id: user_id } = request.user;
+    const { id } = request.params;
+
+    const findOnePetService = new FindOnePetService();
+
+    const pet = await findOnePetService.exec({ id, user_id });
+
+    return response.status(200).json(pet);
   }
 }

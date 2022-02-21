@@ -7,6 +7,7 @@ const petController = new PetController();
 
 petRouter.use(ensureAuthentication);
 petRouter.post('/', petController.create);
+petRouter.get('/:id', petController.findOne);
 petRouter.delete('/:id', petController.delete);
 petRouter.put('/:id', petController.update);
 
