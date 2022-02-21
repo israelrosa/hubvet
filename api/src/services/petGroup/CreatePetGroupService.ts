@@ -61,6 +61,7 @@ export default class CreatePetGroupService {
       coat_size_id,
       coat_type_id,
       user_id,
+      specie_id: isBreedExist.specie_id,
     });
 
     const result = await this.entityManager.save(petGroup);

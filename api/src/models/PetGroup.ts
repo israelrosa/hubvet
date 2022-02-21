@@ -12,6 +12,7 @@ import Breed from './Breed';
 import CoatSize from './CoatSize';
 import CoatType from './CoatType';
 import Pet from './Pet';
+import Specie from './Specie';
 import User from './User';
 
 @Entity('pet_group')
@@ -21,6 +22,9 @@ export default class PetGroup {
 
   @Column()
   user_id: string;
+
+  @Column()
+  specie_id: string;
 
   @Column()
   breed_id: string;
@@ -43,6 +47,10 @@ export default class PetGroup {
   @ManyToOne(() => User, user => user.pet_groups)
   @JoinColumn({ name: 'user_id' })
   user: User;
+
+  @ManyToOne(() => Specie, specie => specie.pet_groups)
+  @JoinColumn({ name: 'specie_id' })
+  specie: Specie;
 
   @ManyToOne(() => Breed, breed => breed.pet_groups)
   @JoinColumn({ name: 'breed_id' })

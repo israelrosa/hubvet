@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 import Breed from './Breed';
+import PetGroup from './PetGroup';
 
 @Entity('specie')
 export default class Specie {
@@ -11,4 +12,7 @@ export default class Specie {
 
   @OneToMany(() => Breed, br => br.specie)
   breeds: Breed[];
+
+  @OneToMany(() => PetGroup, pg => pg.specie)
+  pet_groups: PetGroup[];
 }

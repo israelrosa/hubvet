@@ -8,9 +8,9 @@ export default class FindAllBreedsService {
     this.entityManager = getManager();
   }
 
-  async exec(specie_id?: string): Promise<Breed[]> {
+  async exec(specie_id: string): Promise<Breed[]> {
     let breeds;
-    if (specie_id) {
+    if (specie_id !== 'undefined') {
       breeds = await this.entityManager.find(Breed, {
         where: { specie_id },
       });
