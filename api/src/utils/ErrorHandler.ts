@@ -4,7 +4,7 @@ import log from 'utils';
 interface ErrorParams {
   id: string;
   message: string;
-  statusCode: number;
+  status_code: number;
 }
 export default class ErrorHandler {
   public readonly id: string;
@@ -13,10 +13,10 @@ export default class ErrorHandler {
 
   public readonly statusCode: number;
 
-  constructor({ id, message, statusCode = 400 }: ErrorParams) {
+  constructor({ id, message, status_code = 400 }: ErrorParams) {
     this.id = id;
     this.message = message;
-    this.statusCode = statusCode;
+    this.statusCode = status_code;
   }
 }
 
